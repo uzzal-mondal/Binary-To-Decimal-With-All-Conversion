@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Bin2Dec"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAllCaps="false"
+        android:textColor="#00F2BC"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_binary_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:text="Enter a binary number"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_app_name" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_binary_num"
+        app:layout_constraintStart_toStartOf="@+id/text_binary_num"
+        app:layout_constraintTop_toBottomOf="@+id/text_binary_num">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextBinaryNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_edit_text"
+            android:inputType="number"
+            android:textColor="@color/white">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/image_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_copy"
+        android:gravity="center"
+        android:onClick="convertBinary"
+        android:text="Copy"
+
+        android:padding="6dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+
+
+    <Button
+        android:id="@+id/button_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_button"
+        android:drawableLeft="@drawable/ic_sync"
+        android:gravity="center"
+        android:onClick="convertBinary"
+        android:text=" Convert  "
+        android:textColor="@color/white"
+
+        app:layout_constraintStart_toStartOf="@+id/text_binary_num"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_button"
+        android:drawableLeft="@drawable/ic_close"
+        android:onClick="showClear"
+        android:text="Clear "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/button_paste"
+        app:layout_constraintStart_toEndOf="@+id/button_convert"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <Button
+        android:id="@+id/button_paste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_button"
+        android:drawableLeft="@drawable/ic_paste"
+        android:onClick="showPasteNumber"
+        android:text=" Paste "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <TextView
+        android:id="@+id/text_decimal_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Decimal Number"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/button_convert" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_decimal_number"
+        app:layout_constraintStart_toStartOf="@+id/text_decimal_number"
+        app:layout_constraintTop_toBottomOf="@+id/text_decimal_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDecimalNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_edit_text"
+            android:inputType="number"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnCopy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_button"
+        android:drawableLeft="@drawable/ic_copy"
+        android:onClick="showCopyResult"
+        android:text="Copy "
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/button_convert"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
